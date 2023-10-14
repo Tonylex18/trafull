@@ -1,0 +1,133 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer components {
+    body {
+        @apply bg-white;
+    }
+    .logo {
+        height: 40px !important;
+        width: 40px !important;
+        object-fit: contain;
+    }
+    .link {
+        cursor: pointer;
+    }
+    h1,
+    h2,
+    h3,
+    h4,
+    h5,
+    h6 {
+        @apply text-xl font-bold;
+    }
+    .nav {
+        background-color: rgba(225, 225, 225, 0.7);
+    }
+    .h-screens {
+        height: 65vh;
+    }
+    .hero {
+        height: 70vh !important;
+    }
+    @media screen and (max-width: 600px) {
+        .hero {
+            height: 50vh !important;
+        }
+    }
+    .lastRow ~ * {
+        transform: translateY(-120px);
+      }
+      .SecondtoLastRow ~ * {
+        transform: translateY(-50px);
+      }
+      .mobileLastRow ~ * {
+        /* transform: translateY(-120px) !important; */
+      }
+    .border {
+        border: 1px solid #000;
+    }
+    .scroll-bar {
+        height: 390px;
+        overflow-y: scroll;
+    }
+    .no-scrollbar::-webkit-scrollbar {
+        display: none;
+    }
+
+    /* Hide scrollbar for IE, Edge and Firefox */
+    .no-scrollbar {
+        -ms-overflow-style: none; /* IE and Edge */
+        scrollbar-width: none; /* Firefox */
+    }
+    .active::before {
+        content: "";
+        width: 100%;
+        height: 100%;
+        position: absolute;
+        border: 3px solid yellow;
+        border-radius: 20px;
+        top: 20px;
+        left: 20px;
+    }
+    .slider::before {
+        content: "";
+        position: absolute;
+        height: 20px;
+        width: 20px;
+        border-radius: 50%;
+        left: 4px;
+        bottom: 2px;
+        background: white;
+        transition: 0.4s;
+    }
+    .checkbox:checked + .slider::before {
+        transform: translate(20px);
+    }
+    .plan {
+        z-index: 10;
+        position: absolute;
+    }
+    .transforms {
+        transform: translate(-50%, -50%);
+    }
+    .calendar-grid {
+        display: grid;
+        grid-template-columns: repeat(
+            7,
+            1fr
+        ); /* Create 7 equal-width columns */
+    }
+
+    .calendar-day.empty {
+        visibility: hidden;
+    }
+    .react-switch-handle {
+        height: 16px !important;
+    }
+    @media screen and (min-width: 1440px) {
+        .left-margin {
+            left: -0rem !important;
+        }
+    }
+    @media screen and (max-width: 992px) {
+        .d-none {
+            display: none;
+        }
+    }
+    @media screen and (min-width: 992px) {
+        .d-block {
+            display: none !important;
+        }
+        .flex-width {
+            width: 35% !important;
+        }
+        .flex-width-large {
+            width: 65% !important;
+        }
+        .flex-row-media {
+            flex-direction: row !important;
+        }
+    }
+}
